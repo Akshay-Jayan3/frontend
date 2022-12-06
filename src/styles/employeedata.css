@@ -1,10 +1,15 @@
+@import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
+@import "react-calendar/dist/Calendar.css";
+
+
+
 .box {
   
   
     width:100%;
     height: 100%;
     padding: 20px 20px 20px 20px;
-    margin-top: 20px;
+    
    
   
   }
@@ -61,7 +66,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color:#010322
+    
+    
 }
+
 .two{
    
     
@@ -71,21 +80,22 @@
     height: 70px;
     align-self: center;
     justify-self: center;
-    margin-right: 10px;
+    margin-right: 20px;
     cursor: pointer;
     
    
     
 }
 .two p{
-    border:1px solid  rgba(0, 0, 0, 0.25);
+    border: 1px solid #8991c0;
     padding: 10px;
 }
-.filter input{
+#search{
     width:250px;
     height:35px;
     border: 1px solid #8991c0;
     border-radius: 10px;
+    padding-left: 5px;
 
 
    
@@ -98,10 +108,11 @@ input::placeholder{
     
 }
 .filter select{
-    width:250px;
+    width:200px;
     height:35px;
     border: 1px solid #8991c0;
     border-radius: 10px;
+    padding: 5px;
 
 
 }
@@ -115,5 +126,110 @@ input::placeholder{
 .option{
     color: black;
 }
+select option:hover {
+    margin: 40px;
+  
+    background-color: aqua;
+  
+  }
+  #date{
+    border: 1px solid #8991c0;
+    border-radius: 10px;
 
+  }
+  .react-daterange-picker__wrapper{
+    width:300px;
+    height:35px;
+    border: 1px solid #8991c0;
+    border-radius: 10px;
 
+  }
+  
+  .react-daterange-picker__inputGroup__input{
+    color:#8991c0;
+  }
+  .react-daterange-picker__inputGroup__input span{
+    color:#8991c0
+  }
+.react-daterange-picker__inputGroup__divider span{
+    color:#8991c0
+
+}
+.employee-grid{
+    
+    background-color:#fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    height:300px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    
+}
+.grid{
+    display: grid;
+    grid-template-columns: 250px 250px 250px ;
+    column-gap: 30px;
+    row-gap: 20px;
+    justify-content: space-evenly;
+    list-style: none;
+    margin-left: 0px;
+}
+ul{
+    padding-left: 0;
+}
+.profile{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:200px;
+    height: 200px;
+}
+.profile p{
+    margin-bottom: 0;
+    margin-top: 0;
+    color:#8991c0
+}
+.basic-details{
+    width:200px;
+    height: 120px;
+    background-color: #d5dcfc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 12px;
+   
+}
+.details-one{
+    width:100%;
+    height:50%;
+
+    display: flex;
+    justify-content:space-between;
+}
+.details-one p{
+    margin: 0;
+    color: #010322;
+}
+.details-two{
+    width:100%;
+    height:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding: 5px;
+  
+}
+.details-two p{
+    margin-bottom: 0;
+    color:#010322
+}
+
+  
