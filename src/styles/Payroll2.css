@@ -2,6 +2,7 @@
 @import "react-calendar/dist/Calendar.css";
 
 
+
 .box {
   
   
@@ -24,13 +25,6 @@
     display: flex;
     justify-content: space-between;
    
-
-
-   
-    
-  
-    
-    
 
 }
 .filter{
@@ -155,98 +149,3 @@ select option:hover {
     color:#8991c0
 
 }
-.employee-grid{
-    
-    background-color:#fff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    height:350px;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    border-radius: 10px;
-    
-}
-.grid{
-    display: grid;
-    grid-template-columns: 270px 270px 270px ;
-    column-gap: 30px;
-    row-gap: 20px;
-    justify-content: space-evenly;
-    list-style: none;
-    margin-left: 0px;
-    padding: 0;
-}
-ul{
-    padding-left: 0;
-}
-.profile{
-   
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width:200px;
-    height: 200px;
-   
-}
-.profile p{
-    margin-bottom: 0;
-    margin-top: 0;
-    color:#8991c0
-}
-.imagee{
-    width:100%;
-    display: flex;
-    flex-direction:row;align-items: center;
-    justify-content: space-between;
-  
-    
-    
-   
-}
-.basic-details{
-    width:250px;
-    height: 120px;
-    background-color: #d5dcfc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    padding: 12px;
-   
-}
-.details-one{
-    width:100%;
-    height:50%;
-
-    display: flex;
-    justify-content:space-between;
-}
-.details-one p{
-    margin: 0;
-    color: #010322;
-}
-.details-two{
-    width:100%;
-    height:50%;
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    padding: 5px;
-  
-}
-.details-two p{
-    margin-bottom: 0;
-    color:#010322
-}
-.date-hired{
-    text-align: right;
-    font-size: 14px;
-}
-  .employeetable{
-    padding: 10px;
-  }

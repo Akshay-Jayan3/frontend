@@ -1,9 +1,11 @@
 
 import './App.css';
-import {BrowserRouter as Router,Routes,Route, Link} from "react-router-dom";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import Dashboard from './components/Dashboard';
 import Payroll from './components/Payroll';
-import Employees from './components/Employees';
+
+import Employees from './components/Employees'
+
 import Sidebar from './components/Sidebar';
 function App() {
   return (
@@ -14,15 +16,15 @@ function App() {
         <Sidebar/>
         
       <div className='components'>
-      <Routes>
-          <Route path='/' element={<Dashboard/>}/>
-          <Route path='/employees' element={<Employees/>}/>
-          <Route path='/payroll' element={<Payroll/>}/>
-         
-         
-    
+        <Routes>
+            <Route path='/' element={<Dashboard/>}/>
+            <Route path='/employees' element={<Employees/>}/>
+            <Route path='/payroll' element={<Payroll/>}/>
+          
+          
       
-        </Routes>
+        
+          </Routes>
       </div>
         
        

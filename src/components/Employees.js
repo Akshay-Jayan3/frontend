@@ -10,7 +10,7 @@ import Employeedata from './Employeedata';
 const Employees = () => {
   const [value, onChange] = useState([new Date(), new Date()]);
   const [data,setData]=useState(null)
-  const [enterValue,setEnterValue]=useState('')
+
 
   const url="http://192.168.2.74/employee/all";
   
@@ -29,7 +29,7 @@ const Employees = () => {
   useEffect(() => {
     getData();
     
-  }, [])
+  }, [data])
 
 
 
@@ -60,7 +60,7 @@ const Employees = () => {
        
        
     </div>
-    <div><Employeedata data={data}/></div>
+    <div className='employeetable'><Employeedata data={data}/></div>
 
     
   </div>
