@@ -29,7 +29,7 @@ const Employees = () => {
   useEffect(() => {
     getData();
     
-  }, [])
+  }, [data])
 
 
 
