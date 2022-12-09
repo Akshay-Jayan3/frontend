@@ -6,10 +6,12 @@ import '../styles/employeedata.css'
 import DateRangePicker from '@wojtekmaj/react-daterange-picker/dist/entry.nostyle'
 import { HiUserPlus } from "react-icons/hi2";
 import Employeedata from './Employeedata';
+import AddEmployee from './AddEmployee'
 
 const Employees = () => {
   const [value, onChange] = useState([new Date(), new Date()]);
   const [data,setData]=useState(null)
+  const [show,setShow]=useState(true)
 
 
   const url="http://192.168.2.74/employee/all";
@@ -29,7 +31,7 @@ const Employees = () => {
   useEffect(() => {
     getData();
     
-  }, [data])
+  }, [])
 
 
 
@@ -37,6 +39,8 @@ const Employees = () => {
 
 
   return (
+    
+  
     <div class="box">
     <div className='addemployee'>
         <div className='one'>
@@ -60,7 +64,9 @@ const Employees = () => {
        
        
     </div>
-    <div className='employeetable'><Employeedata data={data}/></div>
+    <div className='employeetable'>
+    <Employeedata/>
+      </div>
 
     
   </div>

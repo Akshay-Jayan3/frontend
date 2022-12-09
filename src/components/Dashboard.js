@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState,useEffect} from 'react';
 import '../styles/dashboard.css';
 import total from '../Assets/total.svg';
 import resigned from '../Assets/resigned.svg';
@@ -7,7 +7,7 @@ import circle from '../Assets/circle.svg'
 import circle2 from '../Assets/circle2.svg'
 import circle3 from '../Assets/circle3.svg'
 import circle4 from '../Assets/circle4.svg'
-
+import axios from 'axios'
 import Chart1 from './Chartone';
 import Chart2 from './ChartTwo';
 
@@ -18,17 +18,39 @@ import Chart2 from './ChartTwo';
 
 
 const Dashboard = () => {
+  const [data,setData]=useState(null)
+
+
+  const url="http://192.168.2.74/employee/all";
+  
+
+  const getData=()=>{
+    axios.get(url).then((res)=>{
+      console.log(res.data)
+      console.log(res.status)
+      setData(res.data)
+
+    }).catch((error)=>{console.log(error)})
+
+
+  }
+
+  useEffect(() => {
+    getData();
+    
+  }, [data])
+
   
 
   
   return (
     <div className='dash'>
-      <div className='greeting'><h1>Welcome , Akshay !</h1></div>
+      <div className='greeting'><h1 style={{fontStyle:"inter"}}>Welcome , Akshay !</h1></div>
       <div className='summary'>
         <div className='summary-data'>
           <img src={total} alt="total"></img>
           <div>
-            <h3>2500</h3>
+            <h3>{data?.length}</h3>
             <p>Total Employees</p>
           </div>
 

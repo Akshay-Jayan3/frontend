@@ -2,7 +2,6 @@ import React from 'react'
 import icon from "../Assets/usericon.svg"
 import { GrMail } from "react-icons/gr";
 import { BsFillTelephoneFill } from "react-icons/bs";
-import threedots from '../Assets/threedots.svg'
 
 import { GoVerified } from "react-icons/go";
 import { GoUnverified } from "react-icons/go";

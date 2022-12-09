@@ -250,3 +250,8 @@ ul{
   .employeetable{
     padding: 10px;
   }
+  .NoEmployee{
+    width:100%;
+    height: 350px;
+   
+  }
