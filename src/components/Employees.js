@@ -14,6 +14,7 @@ const Employees = () => {
   const [show ,setShow]=useState(false)
 
 
+
   const url="http://192.168.2.74/employee/all";
   
 
@@ -41,7 +42,8 @@ const Employees = () => {
   return (
 
     <>
-    {show ? <AddEmployee setShow={setShow}/>:<EmployeeMain data={data}  setShow={setShow}/>}
+    {show ? <AddEmployee setShow={setShow}/>:<EmployeeMain data={data}  setShow={setShow} />}
+    
     </>
 
 

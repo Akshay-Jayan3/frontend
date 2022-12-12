@@ -7,11 +7,14 @@ import {  useFormik } from 'formik'
 import * as Yup from "yup";
 import { FaFileUpload } from 'react-icons/fa'
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-function AddEmployee({setShow}) {
+function EditEmployee({setShow}) {
+    let {id} = useParams()
+    console.log(id)
    
     
-    const add_url = "http://192.168.2.74/employee/add";
+    const edit_url = `http://192.168.2.74/employee/edit/${id}`;
     const formik = useFormik({
         initialValues: {
             FirstName: "",
@@ -22,8 +25,7 @@ function AddEmployee({setShow}) {
             Designation: "",
             Department: "",
             AadharNumber: "",
-            AadharDocument: "",
-            UserType:''
+            AadharDocument: ""
             // created_at:""
             // profilePhoto:null
         },
@@ -39,10 +41,12 @@ function AddEmployee({setShow}) {
             // .test("FILE_TYPE","Invalid format",(value)=>value && ['image/jpeg','image/png'].includes(value.type))
         }),
         onSubmit: (values) => {
-            values.UserType=parseInt(values.UserType)
+           
+           
+         
             console.log(values)
-            axios.post(add_url, values).then(res => console.log("posted", res.status)).catch(err => console.log(err.response?.status))
-            setShow(false)
+            axios.put(edit_url, values).then(res => console.log("posted", res.status)).catch(err => console.log(err.response?.status))
+           
 
         }
 
@@ -52,7 +56,7 @@ function AddEmployee({setShow}) {
             <div className='path'>
                 <p><a href='/Employees' style={{ textDecoration: "none", color: "#000000" }}>Employees</a> <a href='/AddEmployee' style={{ textDecoration: "none", color: "#000000" }}>Add New Employees</a></p>
             </div>
-            <div className='head'><h2>Add Employee</h2></div>
+            <div className='head'><h2>Edit Employee</h2></div>
 
             <div className='div_form'>
                 <form onSubmit={formik.handleSubmit}>
@@ -150,24 +154,6 @@ function AddEmployee({setShow}) {
                                         <option value="Manager">Manager</option>
                                     </select>
                                 </div>
-
-                                <div class="col-md-6 mb-4 ">
-
-                                <select className="options_add" id="UserType" onChange={formik.handleChange} value={formik.values.UserType} onBlur={formik.handleBlur}>
-
-                                <option value="">User type</option>
-
-                                <option value="1">Employee</option>
-
-                                <option value="2">Human Resource</option>
-
-                                <option value="3">Administrator</option>
-
-                                </select>
-
-                                {/* {formik.touched.user_type&&formik.errors.user_type?<p className='error'>{formik.errors.user_type}</p>:null} */}
-
-                            </div>
                                 <div class="textArea">
                                     <textarea style={{width:"300px"}} rows="6" column=
                                     "10" type="text" id="Address" class="form-control" placeholder='Address' onChange={formik.handleChange} value={formik.values.Address} onBlur={formik.handleBlur} />
@@ -185,4 +171,4 @@ function AddEmployee({setShow}) {
     )
 }
 
-export default AddEmployee
+export default EditEmployee

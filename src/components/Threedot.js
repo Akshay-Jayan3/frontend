@@ -4,24 +4,26 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import axios from 'axios'
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 
-
-
-const options = [
-  'Edit',
-  'Delete',
-  
-];
 
 const ITEM_HEIGHT = 48;
 
 export default function LongMenu(props) {
+ 
 
 
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const navigate = useNavigate()
   const open = Boolean(anchorEl);
+  const HandleEdit=(id)=>{
+    navigate(`/employees/${id}`)
+
+  }
+ 
+
 
 
   const HandleDelete=(id)=>{
@@ -45,6 +47,7 @@ export default function LongMenu(props) {
   
 
   };
+ 
   const handleClose = (id) => {
     HandleDelete(id)
    
@@ -64,6 +67,7 @@ export default function LongMenu(props) {
         aria-expanded={open ? 'true' : undefined}
         aria-haspopup="true"
         onClick={handleClick}
+        
       >
         <MoreVertIcon />
       </IconButton>
@@ -83,10 +87,10 @@ export default function LongMenu(props) {
         }}
       >
        
-          <MenuItem>{options[0]}
+          <MenuItem onClick={()=>HandleEdit(props.id)}>Edit
            
           </MenuItem>
-          <MenuItem  onClick={()=>handleClose(props.id) }>{options[1]}
+          <MenuItem  onClick={()=>handleClose(props.id) }>Delete
            
           </MenuItem>
           

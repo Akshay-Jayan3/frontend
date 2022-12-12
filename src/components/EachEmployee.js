@@ -7,7 +7,7 @@ import { GoVerified } from "react-icons/go";
 import { GoUnverified } from "react-icons/go";
 import LongMenu from './Threedot';
 
-const EachEmployee = (props) => {
+const EachEmployee = (props,{setShowEdit}) => {
   
   return (
     <><li>
@@ -16,7 +16,7 @@ const EachEmployee = (props) => {
           <div className='imagee'>
             <div>{props.verification?<GoVerified style={{color:"green"}}/>:<GoUnverified style={{color:"red"}}/>}</div>
             <div><img src={icon}></img></div>
-            <div><LongMenu id={props.id}/></div>
+            <div><LongMenu id={props.id} /></div>
           </div>
          
        

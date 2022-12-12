@@ -3,12 +3,13 @@ import DateRangePicker from '@wojtekmaj/react-daterange-picker/dist/entry.nostyl
 import { HiUserPlus } from "react-icons/hi2";
 import Employeedata from './Employeedata';
 
-const EmployeeMain = ({data ,setShow}) => {
+const EmployeeMain = ({data ,setShow ,setShowEdit}) => {
   const [value, onChange] = useState([new Date(), new Date()]);
+
   const HandleAdd =()=>{
     setShow(true)
   }
-
+ 
   return (
     <div><div class="box">
     <div className='addemployee'>
@@ -33,7 +34,7 @@ const EmployeeMain = ({data ,setShow}) => {
        
        
     </div>
-    <div className='employeetable'>{data?.length !==0 ?<Employeedata data={data}/>:<div className='no-data'><h1>No employees</h1></div>}</div>
+    <div className='employeetable'>{data?.length !==0 ?<Employeedata data={data} />:<div className='no-data'><h1>No employees</h1></div>}</div>
 
     
   </div></div>

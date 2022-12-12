@@ -7,6 +7,7 @@ import Payroll from './components/Payroll';
 import Employees from './components/Employees'
 
 import Sidebar from './components/Sidebar';
+import EditEmployee from './components/EditEmployee';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' element={<Dashboard/>}/>
             <Route path='/employees' element={<Employees/>}/>
             <Route path='/payroll' element={<Payroll/>}/>
+            <Route path='/employees/:id' element={<EditEmployee/>}/>
           
           
       
