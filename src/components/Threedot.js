@@ -9,9 +9,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 
 
+
 const ITEM_HEIGHT = 48;
 
-export default function LongMenu(props) {
+export default function LongMenu(props,{data,setData}) {
  
 
 
@@ -26,8 +27,8 @@ export default function LongMenu(props) {
 
 
 
-  const HandleDelete=(id)=>{
-    axios.delete(`http://192.168.2.74/Employee/Delete/${id}` )
+  const HandleDelete=(eachemployee)=>{
+    axios.delete(`http://192.168.2.74/Employee/Delete/${eachemployee.id}` )
 
     .then(function (response) {
   
@@ -40,6 +41,7 @@ export default function LongMenu(props) {
       console.log(error);
   
     });
+    setData(data.filter((p)=>p.id!==eachemployee.id))
 
   }
   const handleClick = (event) => {
@@ -48,8 +50,8 @@ export default function LongMenu(props) {
 
   };
  
-  const handleClose = (id) => {
-    HandleDelete(id)
+  const handleClose = (eachemployee) => {
+    HandleDelete(eachemployee)
    
     
     
@@ -90,7 +92,7 @@ export default function LongMenu(props) {
           <MenuItem onClick={()=>HandleEdit(props.id)}>Edit
            
           </MenuItem>
-          <MenuItem  onClick={()=>handleClose(props.id) }>Delete
+          <MenuItem  onClick={()=>handleClose(props.eachemployee) }>Delete
            
           </MenuItem>
           

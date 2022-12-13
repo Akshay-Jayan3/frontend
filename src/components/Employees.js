@@ -10,7 +10,7 @@ import EmployeeMain from './EmployeeMain';
 
 const Employees = () => {
 
-  const [data,setData]=useState(null)
+  const [data,setData]=useState([])
   const [show ,setShow]=useState(false)
 
 
@@ -18,22 +18,34 @@ const Employees = () => {
   const url="http://192.168.2.74/employee/all";
   
 
-  const getData=()=>{
-    axios.get(url).then((res)=>{
-      console.log(res.data)
-      console.log(res.status)
-      setData(res.data)
+  // const getData=()=>{
+  //   axios.get(url).then((res)=>{
+  //     console.log(res.data)
+  //     console.log(res.status)
+  //     setData(res.data)
 
-    }).catch((error)=>{console.log(error)})
+  //   }).catch((error)=>{console.log(error)})
 
 
-  }
+  // }
 
   useEffect(() => {
-    getData();
+    const getData=async()=>{
+
+      const {data:res}=await axios.get(url)
+      setData(res)
+    }
+
+      getData();
+      
+      
+  
+   
+    
+    
     
   }, [])
-
+console.log(data )
 
 
 
@@ -42,7 +54,7 @@ const Employees = () => {
   return (
 
     <>
-    {show ? <AddEmployee setShow={setShow}/>:<EmployeeMain data={data}  setShow={setShow} />}
+    {show ? <AddEmployee setShow={setShow} data={data} setData={setData}/>:<EmployeeMain data={data} setData={setData} setShow={setShow} />}
     
     </>
 

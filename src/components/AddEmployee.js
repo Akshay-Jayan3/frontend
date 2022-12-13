@@ -8,7 +8,11 @@ import * as Yup from "yup";
 import { FaFileUpload } from 'react-icons/fa'
 import axios from 'axios';
 
-function AddEmployee({setShow}) {
+function AddEmployee({setShow , data , setData}) {
+    console.log(data.length)
+    
+
+   
    
     
     const add_url = "http://192.168.2.74/employee/add";
@@ -39,10 +43,25 @@ function AddEmployee({setShow}) {
             // .test("FILE_TYPE","Invalid format",(value)=>value && ['image/jpeg','image/png'].includes(value.type))
         }),
         onSubmit: (values) => {
-            values.UserType=parseInt(values.UserType)
+
+            const payload={firstName:values.FirstName
+                        ,lastName:values.LastName,
+                        address:values.Address,
+                        aadharNumber:values.AadharNumber,
+                        aadharDocument:values.AadharDocument,
+                        department:values.Department,
+                        designation:values.Designation,
+                        phoneNumber:values.PhoneNumber,
+                        email:values.Email,
+                        UserType:parseInt(values.UserType)
+            }
+          
             console.log(values)
-            axios.post(add_url, values).then(res => console.log("posted", res.status)).catch(err => console.log(err.response?.status))
+            axios.post(add_url, payload).then(res => console.log("posted", res.status)).catch(err => console.log(err.response?.status))
             setShow(false)
+            setData(data.length !== 0 ? [...data, payload] : data);
+           
+           
 
         }
 
