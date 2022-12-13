@@ -7,12 +7,14 @@ import {  useFormik } from 'formik'
 import * as Yup from "yup";
 import { FaFileUpload } from 'react-icons/fa'
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function EditEmployee({setShow}) {
+    
+    let navigate=useNavigate()
     let {id} = useParams()
     console.log(id)
-   
+    const url="http://192.168.2.74/employee/all";
     
     const edit_url = `http://192.168.2.74/employee/edit/${id}`;
     const formik = useFormik({
@@ -41,11 +43,22 @@ function EditEmployee({setShow}) {
             // .test("FILE_TYPE","Invalid format",(value)=>value && ['image/jpeg','image/png'].includes(value.type))
         }),
         onSubmit: (values) => {
+            const payload={firstName:values.FirstName
+                ,lastName:values.LastName,
+                address:values.Address,
+                aadharNumber:values.AadharNumber,
+                aadharDocument:values.AadharDocument,
+                department:values.Department,
+                designation:values.Designation,
+                phoneNumber:values.PhoneNumber,
+                email:values.Email,
+                UserType:parseInt(values.UserType),}
            
            
          
             console.log(values)
-            axios.put(edit_url, values).then(res => console.log("posted", res.status)).catch(err => console.log(err.response?.status))
+            axios.put(edit_url, payload).then(res =>{navigate('/employees'),console.log("posted", res.status)}).catch(err => console.log(err.response?.status))
+            
            
 
         }

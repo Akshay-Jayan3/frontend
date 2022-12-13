@@ -53,7 +53,8 @@ function AddEmployee({setShow , data , setData}) {
                         designation:values.Designation,
                         phoneNumber:values.PhoneNumber,
                         email:values.Email,
-                        UserType:parseInt(values.UserType)
+                        UserType:parseInt(values.UserType),ProfilePic:"https://firebasestorage.googleapis.com/v0/b/imageupload-d3293.appspot.com/o/images%2FMicrosoftTeams-image.png?alt=media&token=641acf09-ee78-4cca-a539-8bcd96ae0698"
+                        
             }
           
             console.log(values)

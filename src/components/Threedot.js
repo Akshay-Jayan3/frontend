@@ -12,7 +12,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const ITEM_HEIGHT = 48;
 
-export default function LongMenu(props,{data,setData}) {
+export default function LongMenu(props) {
+ 
  
 
 
@@ -27,8 +28,8 @@ export default function LongMenu(props,{data,setData}) {
 
 
 
-  const HandleDelete=(eachemployee)=>{
-    axios.delete(`http://192.168.2.74/Employee/Delete/${eachemployee.id}` )
+  const HandleDelete=(id)=>{
+    axios.delete(`http://192.168.2.74/Employee/Delete/${id}` )
 
     .then(function (response) {
   
@@ -41,8 +42,8 @@ export default function LongMenu(props,{data,setData}) {
       console.log(error);
   
     });
-    setData(data.filter((p)=>p.id!==eachemployee.id))
-
+    props.setData(props.data &&  props.data.filter((p)=>p.id!==id))
+    
   }
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -52,11 +53,6 @@ export default function LongMenu(props,{data,setData}) {
  
   const handleClose = (eachemployee) => {
     HandleDelete(eachemployee)
-   
-    
-    
-    
-    
     setAnchorEl(null);
   };
 
@@ -89,10 +85,10 @@ export default function LongMenu(props,{data,setData}) {
         }}
       >
        
-          <MenuItem onClick={()=>HandleEdit(props.id)}>Edit
+          <MenuItem onClick={()=>HandleEdit(props.eachemployee.id)}>Edit
            
           </MenuItem>
-          <MenuItem  onClick={()=>handleClose(props.eachemployee) }>Delete
+          <MenuItem  onClick={()=>handleClose(props.eachemployee.id) }>Delete
            
           </MenuItem>
           
