@@ -30,20 +30,20 @@ const EachEmployee = (props) => {
         </div>
         <div className='basic-details'>
        
-        <div className="details-one">
-            <div>
-            <p style={{fontSize:"13px" ,fontWeight:"500"}}>Department</p>
-            <p style={{fontSize:"14px"}}>{props.department}</p>
+          <div className="details-one">
+              <div>
+              <p style={{fontSize:"13px" ,fontWeight:"500"}}>Department</p>
+              <p style={{fontSize:"14px"}}>{props.department}</p>
 
-            </div>
-            <div className='date-hired'>
-            <p  style={{fontSize:"13px", fontWeight:"500"}}>Date Hired</p>
-            <p >september 5</p>
-            </div>
+              </div>
+              <div className='date-hired'>
+              <p  style={{fontSize:"13px", fontWeight:"500"}}>Date Hired</p>
+              <p >september 5</p>
+              </div>
+              
             
-           
-            
-        </div>
+              
+          </div>
         <div className='details-two'>
         <p><span><GrMail/></span>{props.email}</p>
         <p><span><BsFillTelephoneFill/></span>{props.phoneNumber}</p>

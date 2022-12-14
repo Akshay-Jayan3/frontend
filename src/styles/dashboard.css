@@ -28,7 +28,7 @@
     height:100px;
     display: flex;
     justify-content: space-between;
-    margin-bottom:50px;
+    margin-bottom:80px;
   
   
 }
@@ -54,7 +54,7 @@
 
 .chart{
     width:100%;
-    height:310px;
+    height:400px;
     display: flex;
     justify-content: space-between;
   
@@ -62,8 +62,8 @@
   
 }
 .datachart{
-    width:420px;
-    height:290px;
+    width:520px;
+    height:400px;
     background-color:#fff;
     border-radius: 10px;
     margin-bottom:50px;

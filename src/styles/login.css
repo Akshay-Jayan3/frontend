@@ -51,3 +51,36 @@
 }
 
 
+
+ input{
+    width:300px;
+    height:35px;
+    border: 1px solid #8991c0;
+    border-radius: 10px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+input::placeholder{
+    color:#8991c0
+}
+input:focus{
+    outline: none;
+    
+}
+select{
+    width:300px;
+    height:35px;
+    border: 1px solid #8991c0;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+
+
+}
+select{
+    color:#9EA5CB;
+}
+ select:focus{
+    outline: none;
+
+}

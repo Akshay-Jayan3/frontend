@@ -15,7 +15,7 @@ const Sidebar = () => {
         <div>
             <h1>supermarket</h1>
         </div>
-        <div className='user'>
+        <div className='users'>
             <div>
                 <img src={icon}></img>
 

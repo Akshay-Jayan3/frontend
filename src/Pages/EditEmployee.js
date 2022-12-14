@@ -8,6 +8,7 @@ import * as Yup from "yup";
 import { FaFileUpload } from 'react-icons/fa'
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import Sidebar from '../components/Sidebar';
 
 function EditEmployee({setShow}) {
     
@@ -65,7 +66,10 @@ function EditEmployee({setShow}) {
 
     })
     return (
-        <div className='div_main'>
+        <div>
+            <Sidebar/>
+            <div className='components'>
+            <div className='div_main'>
             <div className='path'>
                 <p><a href='/Employees' style={{ textDecoration: "none", color: "#000000" }}>Employees</a> <a href='/AddEmployee' style={{ textDecoration: "none", color: "#000000" }}>Add New Employees</a></p>
             </div>
@@ -198,6 +202,9 @@ function EditEmployee({setShow}) {
                 </form>
             </div>
         </div>
+            </div>
+        </div>
+       
     )
 }
 
