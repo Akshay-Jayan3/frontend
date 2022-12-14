@@ -3,8 +3,12 @@ import DateRangePicker from '@wojtekmaj/react-daterange-picker/dist/entry.nostyl
 import { HiUserPlus } from "react-icons/hi2";
 import Employeedata from './Employeedata';
 
-const EmployeeMain = ({data ,setShow ,setData}) => {
+const EmployeeMain = ({data ,setShow ,setData }) => {
   const [value, onChange] = useState([new Date(), new Date()]);
+  const [searchItem, setSearchItem] = useState('');
+  const [option, setOption] = useState('');
+ 
+
 
   const HandleAdd =()=>{
     setShow(true)
@@ -23,18 +27,20 @@ const EmployeeMain = ({data ,setShow ,setData}) => {
     
     </div>
     <div className='filter'>
-        <input id="search" placeholder='Search'/>
-        <select name="cars" id="cars">
-            <option value="volvo" className='option'>All Employees</option>
-            <option value="saab" className='option'>Managers</option>
-            <option value="mercedes" className='option'>salesman</option>
-            <option value="audi"className='option'>accountant</option>
+        <input type="text" id="search" value={searchItem} placeholder='Search' onChange={(event)=>setSearchItem(event.target.value)} />
+        <select name="employees"  id="employees"   onChange={(event)=>setOption(event.target.value)}>
+
+            <option value="" className='option' >Filter by department</option>
+            <option value="All Employees" className='option' >All Employees</option>   
+            <option value="Finance" className='option'>Finance</option>
+            <option value="Sales" className='option'>Sales</option>
+            <option value="Manager"className='option'>Manager</option>
         </select>
         <DateRangePicker style={{border:"1px solid #8991c0"}} onChange={onChange} value={value}  />
        
        
     </div>
-    <div className='employeetable'>{data?.length !==0 ?<Employeedata data={data} setData={setData}/>:<div className='no-data'><h1>No employees</h1></div>}</div>
+    <div className='employeetable'>{data && data?.length !==0 ?<Employeedata data={data} setData={setData} searchItem={searchItem} option={option}/>:<div className='no-data'><h1>No employees</h1></div>}</div>
 
     
   </div></div>

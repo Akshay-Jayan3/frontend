@@ -1,41 +1,22 @@
-import React,{useState,useEffect} from 'react';
-import axios from 'axios'
-import CustomPaginationActionsTable from './Table'
-import '../styles/employeedata.css'
+import React from 'react'
+import '../styles/Payroll.css'
 import DateRangePicker from '@wojtekmaj/react-daterange-picker/dist/entry.nostyle'
-
+import { useState } from 'react'
+import CustomPaginationActionsTable from '../components/Table'
+import Sidebar from '../components/Sidebar'
 
 
 const Payroll = () => {
   const [value, onChange] = useState([new Date(), new Date()]);
-  // const [data,setData]=useState(null)
-
-
-  // const url="http://192.168.2.74/employee/all";
-  
-
-  // const getData=()=>{
-  //   axios.get(url).then((res)=>{
-  //     console.log(res.data)
-  //     console.log(res.status)
-  //     setData(res.data)
-
-  //   }).catch((error)=>{console.log(error)})
-
-
-  // }
-
-  useEffect(() => {
-    getData();
-    
-  }, [])
-  
   return (
-    <div class="box">
+    <div>
+      <Sidebar/>
+      <div className='components'>
+      <div class="box">
     <div className='addemployee'>
         <div className='one'>
-            {/* <h1>{data?.length}</h1>
-            <p>Employees</p> */}
+            <h1>25</h1>
+            <p>Employees</p>
         </div>
         <div className='two'>
           
@@ -60,6 +41,12 @@ const Payroll = () => {
 
     
   </div>
+      </div>
+    </div>
+
+
+
+    
   )
 }
 

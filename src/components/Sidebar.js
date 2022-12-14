@@ -27,7 +27,7 @@ const Sidebar = () => {
            
         </div>
         <div className='dashboard'>
-            <Link className="link" to="/"><span><MdOutlineDashboard /></span>Dashboard</Link>
+            <Link className="link" to="/dashboard"><span><MdOutlineDashboard /></span>Dashboard</Link>
             
         </div>
         <div className='payroll'>  
@@ -39,7 +39,7 @@ const Sidebar = () => {
 
         </div>
         <div className='logout'>
-            <Link className="link" to="/logout"><span><RiLogoutCircleLine/></span>Logout</Link>
+            <Link className="link" to="/"><span><RiLogoutCircleLine/></span>Logout</Link>
 
         </div>
        

@@ -11,7 +11,9 @@ const EachEmployee = (props) => {
   console.log(props.data)
   
   return (
-    <><li>
+    <>
+    
+    <li>
     <div  className='employee-grid'>
         <div className='profile'>
           <div className='imagee'>

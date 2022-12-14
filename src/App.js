@@ -1,27 +1,32 @@
 
 import './App.css';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-import Dashboard from './components/Dashboard';
-import Payroll from './components/Payroll';
+import Dashboard from './Pages/Dashboard';
+import Login from './Pages/Login';
+import Payroll from './Pages/Payroll';
 
-import Employees from './components/Employees'
+import Employees from './Pages/Employees'
 
 import Sidebar from './components/Sidebar';
-import EditEmployee from './components/EditEmployee';
+import EditEmployee from './Pages/EditEmployee';
+import EmployeePage from './Pages/EmployeePage';
 function App() {
   return (
     <div className="App">
       
       <Router>
         
-        <Sidebar/>
+        {/* <Sidebar/> */}
         
-      <div className='components'>
+      <div >
         <Routes>
-            <Route path='/' element={<Dashboard/>}/>
+            <Route path='/' element={<Login/>}/>
+            <Route path='/dashboard' element={<Dashboard/>}/>
             <Route path='/employees' element={<Employees/>}/>
             <Route path='/payroll' element={<Payroll/>}/>
             <Route path='/employees/:id' element={<EditEmployee/>}/>
+            <Route path='/employeePage' element={<EmployeePage/>}/>
+           
           
           
       
