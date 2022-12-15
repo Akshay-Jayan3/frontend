@@ -50,37 +50,41 @@
 
 .dashboard{
     display: flex;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
     flex-basis: 80px;
     color:#E5EAFF;
     margin-bottom: 20px;
+    margin-left: 50px;
     
     
 }
 
 .payroll{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-basis: 80px;
     margin-bottom: 20px;
+    margin-left: 50px;
 }
 .employees{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-basis: 80px;
     margin-bottom: 20px;
+    margin-left: 50px;
 
 }
 .logout{
    
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-basis: 80px;
     margin-bottom: 20px;
+    margin-left: 50px;
 
    
     
